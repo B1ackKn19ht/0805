@@ -26,64 +26,64 @@ const COMPLIMENTS = [
 /* ── Poem lines ────────────────────────────────────── */
 /* delay = ms to wait BEFORE this line appears (after the previous) */
 const POEM = [
-  { text: "Today is...",                              delay: 500 },
-  { text: "as beautiful as other days",               delay: 420 },
-  { text: "but you realize",                          delay: 420 },
-  { text: "another year has gone",                    delay: 400 },
-  { text: "in a blink of the eyes",                   delay: 600 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "however",                                  delay: 900,  bold: true },
-  { text: "Do you know..?",                           delay: 550 },
-  { text: "today is just special",                    delay: 400 },
-  { text: "so special to you",                        delay: 400 },
-  { text: "that's why",                               delay: 550 },
-  { text: "Let's make it...",                         delay: 400 },
-  { text: "the best celebration ever",                delay: 600 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "and let me share...",                      delay: 500 },
-  { text: "a piece of happiness to you",              delay: 550 },
-  { text: "I made all this...",                       delay: 500 },
-  { text: "as a birthday present to you",             delay: 650 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "I'm glad we met on zzz",                   delay: 700 },  /* ← change zzz */
-  { text: "thanks for the friendship we made",        delay: 500 },
-  { text: "thanks for everything",                    delay: 750 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "I wish you all the best",                  delay: 500 },
-  { text: "May your life be at ease",                 delay: 420 },
-  { text: "May all your wishes come true",            delay: 700 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "Remember",                                 delay: 600 },
-  { text: "your ambitions",                           delay: 580 },
-  { text: "you live as a free bird...",               delay: 520 },
-  { text: "flying in the blue sky",                   delay: 700 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "Now things are different...",              delay: 550 },
-  { text: "real story of your life",                  delay: 400 },
-  { text: "is just about to begin",                   delay: 650 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "indeed..",                                 delay: 500 },
-  { text: "but...",                                   delay: 750 },
-  { text: "don't worry",                              delay: 520 },
-  { text: "because...",                               delay: 620 },
-  { text: "God has your back",                        delay: 850,  bold: true },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "and",                                      delay: 440 },
-  { text: "this year will be better",                 delay: 500 },
-  { text: "and I hope",                               delay: 440 },
-  { text: "you'll find...",                           delay: 520 },
-  { text: "happiness along the way",                  delay: 620 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "keep your spirit up",                      delay: 500 },
-  { text: "enjoy every single moment...",             delay: 420 },
-  { text: "that you experience today",                delay: 420 },
-  { text: "fill it with your most beautiful smile",   delay: 520 },
-  { text: "and make it the best memory..",            delay: 750 },
-  { text: "",                                         delay: 300,  spacer: true },
-  { text: "lastly...",                                delay: 650 },
-  { text: "I'd like to wish you one more time",       delay: 520 },
-  { text: "",                                         delay: 400,  spacer: true },
-  { text: "a very happy birthday 🎂",                  delay: 700,  bold: true, final: true },
+  { text: "Today is...",                              delay: 1000 },
+  { text: "as beautiful as other days",               delay: 850 },
+  { text: "but you realize",                          delay: 850 },
+  { text: "another year has gone",                    delay: 800 },
+  { text: "in a blink of the eyes",                   delay: 1100 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "however",                                  delay: 1700,  bold: true },
+  { text: "Do you know..?",                           delay: 1100 },
+  { text: "today is just special",                    delay: 850 },
+  { text: "so special to you",                        delay: 850 },
+  { text: "that's why",                               delay: 1100 },
+  { text: "Let's make it...",                         delay: 850 },
+  { text: "the best celebration ever",                delay: 1100 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "and let me share...",                      delay: 1000 },
+  { text: "a piece of happiness to you",              delay: 1100 },
+  { text: "I made all this...",                       delay: 1000 },
+  { text: "as a birthday present to you",             delay: 1200 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "I'm glad we met on zzz",                   delay: 1400 },  /* ← change zzz */
+  { text: "thanks for the friendship we made",        delay: 1000 },
+  { text: "thanks for everything",                    delay: 1400 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "I wish you all the best",                  delay: 1000 },
+  { text: "May your life be at ease",                 delay: 850 },
+  { text: "May all your wishes come true",            delay: 1300 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "Remember",                                 delay: 1200 },
+  { text: "your ambitions",                           delay: 1100 },
+  { text: "you live as a free bird...",               delay: 1000 },
+  { text: "flying in the blue sky",                   delay: 1300 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "Now things are different...",              delay: 1100 },
+  { text: "real story of your life",                  delay: 850 },
+  { text: "is just about to begin",                   delay: 1200 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "indeed..",                                 delay: 1000 },
+  { text: "but...",                                   delay: 1400 },
+  { text: "don't worry",                              delay: 1000 },
+  { text: "because...",                               delay: 1200 },
+  { text: "God has your back",                        delay: 1600,  bold: true },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "and",                                      delay: 900 },
+  { text: "this year will be better",                 delay: 1000 },
+  { text: "and I hope",                               delay: 900 },
+  { text: "you'll find...",                           delay: 1000 },
+  { text: "happiness along the way",                  delay: 1200 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "keep your spirit up",                      delay: 1000 },
+  { text: "enjoy every single moment...",             delay: 850 },
+  { text: "that you experience today",                delay: 850 },
+  { text: "fill it with your most beautiful smile",   delay: 1000 },
+  { text: "and make it the best memory..",            delay: 1400 },
+  { text: "",                                         delay: 600,   spacer: true },
+  { text: "lastly...",                                delay: 1300 },
+  { text: "I'd like to wish you one more time",       delay: 1000 },
+  { text: "",                                         delay: 700,   spacer: true },
+  { text: "A Very Happy Birthday 🎂",                  delay: 1300,  bold: true, final: true },
 ];
 
 /* ── Balloon colors ────────────────────────────────── */
@@ -151,6 +151,9 @@ const SCREENS = [
   document.getElementById('screen-2'),
   document.getElementById('screen-3'),
   document.getElementById('screen-4'),
+  document.getElementById('screen-5'),
+  document.getElementById('screen-6'),
+  document.getElementById('screen-7'),
 ];
 const progressNav    = document.getElementById('progress-nav');
 const progressDots   = document.querySelectorAll('.dot');
@@ -197,7 +200,10 @@ function navigateTo(idx, withConfetti = false) {
     /* Screen-specific init */
     if (idx === 2) initCakeScreen();
     if (idx === 3) initBalloonScreen();
-    if (idx === 4) initPoemScreen();
+    if (idx === 4) initTributeScreen();
+    if (idx === 5) initGrowScreen();
+    if (idx === 6) initPinocchioScreen();
+    if (idx === 7) initPoemScreen();
 
   }, 400);
 }
@@ -755,8 +761,7 @@ function initBalloonScreen() {
         showBalloonMsg(balloonMsgs[idx]);
 
         if (poppedCount === TOTAL_BALLOONS) {
-          counter.classList.add('done');
-          counter.textContent = 'All popped! 🎉';
+          counter.classList.add('hidden');
           setTimeout(() => {
             doneEl.classList.remove('hidden');
             setTimeout(() => balloonNext.classList.remove('hidden'), 700);
@@ -776,7 +781,80 @@ function initBalloonScreen() {
 
 
 /* ══════════════════════════════════════════════════════
-   SCREEN 4 · POEM
+   SCREEN 4 · TRIBUTE
+   ══════════════════════════════════════════════════════ */
+function initTributeScreen() {
+  const container   = document.getElementById('tribute-container');
+  const tributeNext = document.getElementById('tribute-next');
+
+  tributeNext.classList.add('hidden');
+
+  const cards = container.querySelectorAll('.mcard');
+  cards.forEach(c => c.classList.remove('visible'));
+
+  cards.forEach((card, i) => {
+    setTimeout(() => {
+      requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('visible')));
+      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+    }, 1000 + i * 260);
+  });
+
+  setTimeout(
+    () => tributeNext.classList.remove('hidden'),
+    1000 + (cards.length - 1) * 260 + 700
+  );
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SCREEN 5 · STAY TOGETHER GROW TOGETHER
+   ══════════════════════════════════════════════════════ */
+function initGrowScreen() {
+  const growNext = document.getElementById('grow-next');
+  growNext.classList.add('hidden');
+
+  const paras = document.querySelectorAll('#grow-text .grow-para');
+  paras.forEach(p => p.classList.remove('visible'));
+
+  paras.forEach((p, i) => {
+    setTimeout(() => {
+      requestAnimationFrame(() => requestAnimationFrame(() => p.classList.add('visible')));
+      setTimeout(() => p.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+    }, 700 + i * 520);
+  });
+
+  setTimeout(
+    () => growNext.classList.remove('hidden'),
+    700 + (paras.length - 1) * 520 + 650
+  );
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SCREEN 6 · PINOCCHIO
+   ══════════════════════════════════════════════════════ */
+function initPinocchioScreen() {
+  const nextBtn = document.getElementById('pinocchio-next');
+  nextBtn.classList.add('hidden');
+
+  const paras = document.querySelectorAll('#pinocchio-text .pinocchio-para');
+  paras.forEach(p => p.classList.remove('visible'));
+
+  paras.forEach((p, i) => {
+    setTimeout(() => {
+      requestAnimationFrame(() => requestAnimationFrame(() => p.classList.add('visible')));
+    }, 600 + i * 540);
+  });
+
+  setTimeout(
+    () => nextBtn.classList.remove('hidden'),
+    600 + (paras.length - 1) * 540 + 600
+  );
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SCREEN 7 · POEM
    ══════════════════════════════════════════════════════ */
 function initPoemScreen() {
   const container  = document.getElementById('poem-container');
@@ -892,6 +970,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Music */
   musicToggle.addEventListener('click', toggleMusic);
+
+  /* Poem finale heart → secret message overlay */
+  const secretOverlay = document.getElementById('secret-overlay');
+  const poemFinale    = document.getElementById('poem-finale');
+  if (poemFinale && secretOverlay) {
+    poemFinale.addEventListener('click', () => {
+      secretOverlay.classList.add('visible');
+      secretOverlay.setAttribute('aria-hidden', 'false');
+    });
+    secretOverlay.addEventListener('click', () => {
+      secretOverlay.classList.remove('visible');
+      secretOverlay.setAttribute('aria-hidden', 'true');
+    });
+  }
 
   /* Keyboard for open + surprise */
   [openBtn, surpriseBtn, musicToggle].forEach(btn => {

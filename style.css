@@ -794,7 +794,226 @@ body {
 
 
 /* ══════════════════════════════════════════════════════
-   SCREEN 4 · POEM
+   SCREEN 5 · STAY TOGETHER GROW TOGETHER
+   ══════════════════════════════════════════════════════ */
+.grow-card {
+  max-width: 480px;
+  padding: 1.8rem 1.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 92vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.grow-card::-webkit-scrollbar { display: none; }
+.grow-card > * { opacity: 0; }
+#screen-5.active .grow-card > * {
+  animation: riseUp 0.65s cubic-bezier(0.34, 1.20, 0.64, 1) both;
+}
+#screen-5.active .deco-top      { animation-delay: 0.05s; }
+#screen-5.active .grow-title    { animation-delay: 0.14s; }
+#screen-5.active .grow-accent   { animation-delay: 0.22s; }
+#screen-5.active .grow-sub      { animation-delay: 0.30s; }
+#screen-5.active .grow-svg-wrap { animation-delay: 0.40s; }
+#screen-5.active .grow-text     { animation-delay: 0.50s; }
+
+.grow-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.45rem, 4.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--text-700);
+  text-align: center;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 0.18rem;
+}
+.grow-accent {
+  background: linear-gradient(135deg, var(--pink-dark), var(--lavender-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.35rem;
+}
+.grow-sub {
+  font-size: 0.82rem;
+  color: var(--text-300);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.9rem;
+}
+.grow-svg-wrap {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  line-height: 0;
+}
+.grow-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+.grow-para {
+  font-size: 0.94rem;
+  color: var(--text-500);
+  line-height: 1.78;
+  text-align: center;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.34, 1.15, 0.64, 1);
+}
+.grow-para.visible { opacity: 1; transform: translateY(0); }
+.grow-para em {
+  color: var(--pink-dark);
+  font-weight: 600;
+  -webkit-text-fill-color: var(--pink-dark);
+  font-style: normal;
+}
+.grow-tag-line {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-700);
+  line-height: 1.65;
+  -webkit-text-fill-color: var(--text-700);
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SCREEN 6 · PINOCCHIO
+   ══════════════════════════════════════════════════════ */
+.pinocchio-card {
+  max-width: 420px;
+  padding: 1.6rem 1.4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 92vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.pinocchio-card::-webkit-scrollbar { display: none; }
+.pinocchio-card > * { opacity: 0; }
+#screen-6.active .pinocchio-card > * {
+  animation: riseUp 0.65s cubic-bezier(0.34, 1.20, 0.64, 1) both;
+}
+#screen-6.active .deco-top        { animation-delay: 0.05s; }
+#screen-6.active .pinocchio-title { animation-delay: 0.14s; }
+#screen-6.active svg              { animation-delay: 0.28s; }
+#screen-6.active .pinocchio-text  { animation-delay: 0.42s; }
+
+.pinocchio-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--text-700);
+  text-align: center;
+  margin-bottom: 0.9rem;
+}
+.pinocchio-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+.pinocchio-para {
+  font-size: 0.94rem;
+  color: var(--text-500);
+  line-height: 1.78;
+  text-align: center;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.34, 1.15, 0.64, 1);
+}
+.pinocchio-para.visible { opacity: 1; transform: translateY(0); }
+
+
+/* ══════════════════════════════════════════════════════
+   AGE CREDIT
+   ══════════════════════════════════════════════════════ */
+#age-credit {
+  position: fixed;
+  bottom: 10px;
+  right: 16px;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.06em;
+  z-index: 200;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SECRET MESSAGE OVERLAY  (poem finale heart click)
+   ══════════════════════════════════════════════════════ */
+#secret-overlay {
+  position: fixed; inset: 0;
+  z-index: 350;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(6, 1, 18, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.75s ease;
+}
+#secret-overlay.visible { opacity: 1; pointer-events: auto; }
+
+.secret-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+.secret-heart {
+  font-size: 3.6rem;
+  animation: heartBeat 1.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 22px rgba(255, 107, 157, 0.75));
+}
+.secret-text {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.15rem, 4.5vw, 1.9rem);
+  color: #ffb3c6;
+  line-height: 1.55;
+  filter: drop-shadow(0 0 12px rgba(255, 107, 157, 0.40));
+}
+.secret-text span {
+  display: block;
+  font-size: clamp(0.95rem, 3.5vw, 1.5rem);
+  background: linear-gradient(135deg, #ff6b9d 0%, #cbb8e8 60%, #ff6b9d 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShimmer 3s linear infinite;
+  margin-top: 0.5rem;
+}
+.secret-hint {
+  font-size: 0.76rem;
+  color: rgba(192, 168, 216, 0.50);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SCREEN 6 · POEM
    ══════════════════════════════════════════════════════ */
 .poem-card {
   max-width: 480px;
@@ -898,6 +1117,9 @@ body {
   display: block;
   text-align: center;
   filter: drop-shadow(0 0 12px rgba(255, 107, 157, 0.45));
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 @keyframes heartBeat {
   0%,100% { transform: scale(1);    }
@@ -934,6 +1156,104 @@ body {
   0%,100% { box-shadow: 0 2px 14px rgba(140,80,180,0.14); }
   50%     { box-shadow: 0 4px 28px rgba(155,127,212,0.48), 0 0 14px rgba(200,150,240,0.22); }
 }
+
+
+/* ══════════════════════════════════════════════════════
+   SCREEN 4 · TRIBUTE
+   ══════════════════════════════════════════════════════ */
+.tribute-card {
+  max-width: 96vw;
+  width: 860px;
+  padding: 2.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  max-height: 92vh;
+}
+.tribute-card > * { opacity: 0; }
+#screen-4.active .tribute-card > * {
+  animation: riseUp 0.65s cubic-bezier(0.34, 1.20, 0.64, 1) both;
+}
+#screen-4.active .deco-top            { animation-delay: 0.05s; }
+#screen-4.active .tribute-title       { animation-delay: 0.15s; }
+#screen-4.active .tribute-sub         { animation-delay: 0.22s; }
+#screen-4.active .tribute-scroll-wrap { animation-delay: 0.28s; }
+#screen-4.active .deco-bottom         { animation-delay: 0.38s; }
+
+.tribute-scroll-wrap {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.4rem 0.2rem;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 88%, transparent 100%);
+}
+.tribute-scroll-wrap::-webkit-scrollbar { display: none; }
+
+.tribute-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0.4rem 0 1.5rem;
+}
+
+.tribute-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--text-700);
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+}
+
+.tribute-sub {
+  font-size: 0.82rem;
+  color: var(--text-300);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.mgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 100%;
+  padding: 0.5rem 0 1.5rem;
+  align-items: start;
+}
+@media (max-width: 480px) {
+  .mgrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.mcard {
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 107, 157, .22);
+  border-radius: 18px;
+  padding: 16px 14px;
+  opacity: 0;
+  transform: translateY(22px) scale(0.97);
+  transition: opacity .60s ease,
+              transform .60s cubic-bezier(.34, 1.20, .64, 1),
+              box-shadow .30s ease,
+              border-color .30s ease;
+}
+.mcard.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.mcard:hover {
+  box-shadow: 0 10px 36px rgba(255, 77, 141, .18);
+  border-color: rgba(255, 107, 157, .50);
+  transform: translateY(-4px) scale(1) !important;
+}
+.mcard svg  { display: block; width: 100%; height: auto; margin-bottom: 10px; border-radius: 6px; }
+.mcard h3   { font-family: 'Playfair Display', Georgia, serif; color: var(--pink-dark); font-size: .96rem; font-weight: 700; margin-bottom: 6px; }
+.mcard p    { color: var(--text-500); font-size: .84rem; line-height: 1.65; }
 
 
 /* ══════════════════════════════════════════════════════
