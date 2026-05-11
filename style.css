@@ -1227,7 +1227,7 @@ body {
   align-items: start;
 }
 @media (max-width: 480px) {
-  .mgrid { grid-template-columns: repeat(2, 1fr); }
+  .mgrid { grid-template-columns: 1fr; }
 }
 
 .mcard {
@@ -1260,6 +1260,9 @@ body {
    RESPONSIVE
    ══════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
+  /* tighter screen padding so cards use full width */
+  .screen        { padding: 0.75rem; }
+
   .landing-card  { padding: 2.4rem 1.8rem; }
   .birthday-card { padding: 2rem 1.6rem 1.7rem; }
   .cake-card, .balloon-card { padding: 1.8rem 1.4rem 1.6rem; }
@@ -1271,6 +1274,31 @@ body {
   .balloons-grid { gap: 0.5rem 0.25rem; }
   .balloon       { width: 46px; height: 56px; }
   .poem-card     { padding: 1.8rem 1.2rem; }
+
+  /* tribute card: full-bleed, taller scroll area */
+  .tribute-card {
+    padding: 1.6rem 1rem;
+    max-height: 96vh;
+    width: 100%;
+    max-width: 100%;
+  }
+  .mgrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  /* with 1 column, cap SVG height so it doesn't overwhelm the card */
+  .mcard svg { max-height: 160px; object-fit: contain; }
+  .mcard h3  { font-size: 1.02rem; }
+  .mcard p   { font-size: 0.88rem; }
+
+  /* grow & pinocchio cards: tighter on small screens */
+  .grow-card      { padding: 1.4rem 1rem 1.6rem; }
+  .pinocchio-card { padding: 1.2rem 1rem 1.6rem; }
+  .grow-svg-wrap  { border-radius: 10px; }
+
+  /* progress dots: smaller gap so 7 dots fit comfortably */
+  #progress-nav { gap: 5px; padding: 6px 10px; }
+  .dot          { width: 7px; height: 7px; }
 }
 
 @media (max-height: 680px) {
