@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 💖</title>
+
+  <!-- Web fonts — Pacifico (banner) + Playfair Display (poem) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       DARK INTRO LAYERS  (removed by JS after click)
+       Layer order (z-index low → high):
+         dark-bg     z-50  solid backdrop, hides all content
+         lightup-btn z-55  button clipped to torch circle only
+         dark-overlay z-60 torch gradient (hole at cursor)
+         cursor-glow  z-65 always-visible glow dot
+       ═══════════════════════════════════════════════ -->
+
+  <!-- 1. Solid dark backdrop -->
+  <div id="dark-bg" aria-hidden="true"></div>
+
+  <!-- 2. Moving button — only visible through the torch hole (clip-path by JS) -->
+  <button id="lightup-btn" aria-label="Find the light and click it!">
+    <span class="lu-icon">✨</span>
+    <span class="lu-text">Light&nbsp;Up</span>
+  </button>
+
+  <!-- 3. Torch overlay — dark with transparent hole at cursor position -->
+  <div id="dark-overlay" aria-hidden="true"></div>
+
+  <!-- 4. Glowing cursor dot — always on top of the dark screen -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Background layers -->
+  <div id="bg-orbs"        aria-hidden="true"></div>
+  <div id="bg-particles"   aria-hidden="true"></div>
+  <!-- Hovering transparent balloons on every screen -->
+  <div id="bg-balloons"    aria-hidden="true"></div>
+  <div id="cursor-sparkles" aria-hidden="true"></div>
+  <div id="confetti-container" aria-hidden="true"></div>
+
+  <!-- Music -->
+  <button id="music-toggle" class="music-btn" aria-label="Toggle music" title="Toggle music">
+    <span id="music-icon">🎵</span>
+  </button>
+  <audio id="bg-music" loop preload="none">
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Progress dots (screens 1–4) -->
+  <nav id="progress-nav" aria-label="Progress" aria-hidden="true">
+    <span class="dot" data-idx="1"></span>
+    <span class="dot" data-idx="2"></span>
+    <span class="dot" data-idx="3"></span>
+    <span class="dot" data-idx="4"></span>
+  </nav>
+
+
+  <!-- ═══════════════════════════════
+       SCREEN 0 · Landing
+       ═══════════════════════════════ -->
+  <section id="screen-0" class="screen active" aria-label="Landing">
+    <div class="card glass landing-card">
+      <p class="deco-top">✨ &middot; 🌸 &middot; ✨</p>
+      <h1 class="landing-title">
+        Hey&nbsp;<span class="name-highlight">[Her Name]</span>&nbsp;💖
+      </h1>
+      <p class="landing-sub">I made something for you&hellip;</p>
+      <button id="open-btn" class="btn btn-open">Open&nbsp;🎁</button>
+      <p class="deco-bottom">🌷 &middot; 💕 &middot; 🌷</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       SCREEN 1 · Birthday message
+       ═══════════════════════════════ -->
+  <section id="screen-1" class="screen" aria-label="Birthday message" aria-hidden="true">
+    <div class="card glass birthday-card">
+
+      <!--
+        ╔═ PHOTO ════════════════════════════════╗
+        ║ Replace .photo-placeholder with:       ║
+        ║ <img src="photo.jpg" alt="Name"        ║
+        ║      class="photo-img">                ║
+        ╚════════════════════════════════════════╝
+      -->
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <span class="photo-icon">🌸</span>
+            <span class="photo-label">Add a photo here</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="birthday-content">
+        <h2 class="birthday-title">Happy Birthday!&nbsp;🎉</h2>
+        <div class="birthday-msgs">
+          <p class="bday-line line-1">You make everything brighter.</p>
+          <p class="bday-line line-2">I&rsquo;m really glad I know you&nbsp;😊</p>
+        </div>
+      </div>
+
+      <div class="surprise-section">
+        <button id="surprise-btn" class="btn btn-surprise">Click for a surprise&nbsp;✨</button>
+        <div id="compliment-box" class="compliment-box" aria-live="polite">
+          <span class="c-star left">✦</span>
+          <p id="compliment-text" class="compliment-text"></p>
+          <span class="c-star right">✦</span>
+        </div>
+      </div>
+
+      <button class="btn btn-next next-screen-btn" data-to="2">Continue&nbsp;→</button>
+      <p class="deco-bottom">🌸 &middot; 💖 &middot; 🌸</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       SCREEN 2 · Cut the Cake
+       ═══════════════════════════════ -->
+  <section id="screen-2" class="screen" aria-label="Cut the cake" aria-hidden="true">
+    <div class="card glass cake-card">
+
+      <p class="deco-top">🕯️ &middot; 🎂 &middot; 🕯️</p>
+
+      <!-- Scrolling Happy Birthday banner -->
+      <div class="hb-banner" aria-hidden="true">
+        <div class="hb-track">
+          <!-- Duplicated text so the loop is seamless -->
+          <span class="hb-text">🌟 Happy Birthday! 🎂</span>
+          <span class="hb-text">🎉 Make a Wish! ✨</span>
+          <span class="hb-text">🌸 You're so special! 💖</span>
+          <span class="hb-text">🌟 Happy Birthday! 🎂</span>
+          <span class="hb-text">🎉 Make a Wish! ✨</span>
+          <span class="hb-text">🌸 You're so special! 💖</span>
+        </div>
+      </div>
+
+      <h2 class="section-title">Make a Wish!&nbsp;✨</h2>
+      <p class="section-sub" id="cake-sub">Tap each candle to blow it out&nbsp;🕯️</p>
+
+      <!-- CSS Cake -->
+      <div class="cake-scene">
+
+        <!-- Candles row -->
+        <div class="candles-row" id="candles-row">
+          <div class="candle" data-lit="true"><div class="flame"></div></div>
+          <div class="candle" data-lit="true"><div class="flame"></div></div>
+          <div class="candle" data-lit="true"><div class="flame"></div></div>
+          <div class="candle" data-lit="true"><div class="flame"></div></div>
+        </div>
+
+        <!-- Cake tiers -->
+        <div class="cake-tier tier-top">
+          <div class="frosting"></div>
+        </div>
+        <div class="cake-tier tier-mid">
+          <div class="cake-deco"></div>
+        </div>
+        <div class="cake-tier tier-bot"></div>
+        <div class="cake-plate"></div>
+
+      </div>
+
+      <div id="wish-reveal" class="wish-reveal hidden">
+        <p>Your wish is on its way&nbsp;✨</p>
+      </div>
+
+      <button class="btn btn-next next-screen-btn hidden" id="cake-next" data-to="3">
+        Continue&nbsp;→
+      </button>
+      <p class="deco-bottom">🌸 &middot; 💕 &middot; 🌸</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       SCREEN 3 · Pop the Balloons
+       ═══════════════════════════════ -->
+  <section id="screen-3" class="screen" aria-label="Pop the balloons" aria-hidden="true">
+    <div class="card glass balloon-card">
+
+      <p class="deco-top">🎈 &middot; 🎉 &middot; 🎈</p>
+      <h2 class="section-title">Pop All the Balloons!&nbsp;🎈</h2>
+      <p class="section-sub">Tap each balloon to pop it</p>
+
+      <div class="balloons-grid" id="balloons-grid">
+        <!-- JS creates 8 balloons here -->
+      </div>
+
+      <!-- Message that appears when each balloon is popped -->
+      <div id="balloon-msg" class="balloon-msg" aria-live="polite"></div>
+
+      <p class="balloon-counter" id="balloon-counter">0&nbsp;/&nbsp;8 popped</p>
+
+      <div id="balloon-done" class="balloon-done hidden">
+        <p>🎉&nbsp;All popped!&nbsp;🎉</p>
+      </div>
+
+      <button class="btn btn-next next-screen-btn hidden" id="balloon-next" data-to="4">
+        Continue&nbsp;→
+      </button>
+      <p class="deco-bottom">🌸 &middot; 💖 &middot; 🌸</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       SCREEN 4 · Poem
+       ═══════════════════════════════ -->
+  <section id="screen-4" class="screen" aria-label="Birthday poem" aria-hidden="true">
+    <div class="card glass poem-card">
+
+      <p class="deco-top poem-deco-top">💌 &middot; 🌸 &middot; 💌</p>
+
+      <div class="poem-scroll-wrap" id="poem-scroll-wrap">
+        <div class="poem-container" id="poem-container">
+          <!-- Lines revealed by JS -->
+        </div>
+      </div>
+
+      <div id="poem-finale" class="poem-finale hidden">💖</div>
+
+    </div>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
