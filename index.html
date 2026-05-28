@@ -8,35 +8,11 @@
   <!-- Web fonts — Pacifico (banner) + Playfair Display (poem) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ═══════════════════════════════════════════════
-       DARK INTRO LAYERS  (removed by JS after click)
-       Layer order (z-index low → high):
-         dark-bg     z-50  solid backdrop, hides all content
-         lightup-btn z-55  button clipped to torch circle only
-         dark-overlay z-60 torch gradient (hole at cursor)
-         cursor-glow  z-65 always-visible glow dot
-       ═══════════════════════════════════════════════ -->
-
-  <!-- 1. Solid dark backdrop -->
-  <div id="dark-bg" aria-hidden="true"></div>
-
-  <!-- 2. Moving button — only visible through the torch hole (clip-path by JS) -->
-  <button id="lightup-btn" aria-label="Find the light and click it!">
-    <span class="lu-icon">✨</span>
-    <span class="lu-text">Light&nbsp;Up</span>
-  </button>
-
-  <!-- 3. Torch overlay — dark with transparent hole at cursor position -->
-  <div id="dark-overlay" aria-hidden="true"></div>
-
-  <!-- 4. Glowing cursor dot — always on top of the dark screen -->
-  <div id="cursor-glow" aria-hidden="true"></div>
 
   <!-- Background layers -->
   <div id="bg-orbs"        aria-hidden="true"></div>
@@ -250,7 +226,6 @@
               <rect x="57" y="31" width="10" height="3" rx="1" fill="#ff6b9d">
                 <animateTransform attributeName="transform" type="rotate" values="20,67,33;35,67,33;20,67,33" dur=".6s" repeatCount="indefinite"/>
               </rect>
-              <text x="50" y="62" text-anchor="middle" font-size="7" fill="#9b59b6" font-family="sans-serif">🕹️ arcade day</text>
             </svg>
             <h3>Mall &amp; Arcade Day</h3>
             <p>Us against every arcade machine — laughing, competing, eating together. Honestly the perfect kind of day.</p>
@@ -281,7 +256,6 @@
               <rect x="54" y="45" width="9" height="5" rx="2" fill="#333">
                 <animateTransform attributeName="transform" type="rotate" values="0,58,47;-5,58,47;0,58,47" dur=".5s" begin=".25s" repeatCount="indefinite"/>
               </rect>
-              <text x="50" y="67" text-anchor="middle" font-size="7" fill="#9b59b6" font-family="sans-serif">🎮 gaming sessions</text>
             </svg>
             <h3>COD Playing</h3>
             <p>Screaming at the screen, hyping each other — gaming hits different when it's with you.</p>
@@ -303,14 +277,13 @@
               <ellipse cx="28" cy="29" rx="6.5" ry="4" fill="#2c1a0e"/>
               <circle cx="72" cy="35" r="7" fill="#ffcc99"/>
               <ellipse cx="72" cy="29" rx="7" ry="4.5" fill="#2c1a0e"/>
-              <rect x="65" y="30" width="5" height="12" rx="2" fill="#2c1a0e"/>
-              <rect x="79" y="30" width="5" height="12" rx="2" fill="#2c1a0e"/>
+              <rect x="64" y="27" width="4" height="16" rx="2" fill="#2c1a0e"/>
+              <rect x="78" y="27" width="4" height="16" rx="2" fill="#2c1a0e"/>
               <path d="M25 35 Q28 37 31 35" stroke="#2c1a0e" stroke-width="1.2" fill="none"/>
               <path d="M69 35 Q72 37 75 35" stroke="#2c1a0e" stroke-width="1.2" fill="none"/>
               <ellipse cx="50" cy="44" rx="8" ry="4" fill="#ffcc99"/>
               <text x="18" y="22" font-size="7" fill="#b0a0d0" opacity="0">z<animate attributeName="opacity" values="0;.8;0" dur="2s" repeatCount="indefinite"/><animate attributeName="y" values="22;14;6" dur="2s" repeatCount="indefinite"/></text>
               <text x="76" y="20" font-size="7" fill="#b0a0d0" opacity="0">z<animate attributeName="opacity" values="0;.8;0" dur="2s" begin="1s" repeatCount="indefinite"/><animate attributeName="y" values="20;12;4" dur="2s" begin="1s" repeatCount="indefinite"/></text>
-              <text x="50" y="67" text-anchor="middle" font-size="7" fill="#9b59b6" font-family="sans-serif">🤝 held hands to make feel safe</text>
             </svg>
             <h3>Holding Hands to Make Feel Safe</h3>
             <p>In hospital you drifted off, and I held your hand so you felt safe. That quiet moment is one of the softest memories I carry.</p>
@@ -325,8 +298,8 @@
               <rect x="30" y="33" width="60" height="20" rx="4" fill="#d0e8e0"/>
               <circle cx="80" cy="31" r="9" fill="#ffcc99"/>
               <ellipse cx="80" cy="24" rx="9" ry="5" fill="#2c1a0e"/>
-              <rect x="73" y="22" width="5" height="14" rx="2.5" fill="#2c1a0e"/>
-              <rect x="84" y="22" width="5" height="14" rx="2.5" fill="#2c1a0e"/>
+              <rect x="69" y="22" width="5" height="20" rx="2.5" fill="#2c1a0e"/>
+              <rect x="85" y="22" width="5" height="20" rx="2.5" fill="#2c1a0e"/>
               <path d="M76 31 Q80 33 84 31" stroke="#c0706a" stroke-width="1" fill="none"/>
               <line x1="88" y1="5" x2="88" y2="25" stroke="#aaa" stroke-width="1"/>
               <rect x="84" y="2" width="8" height="6" rx="2" fill="#c8e0ff"/>
@@ -344,7 +317,6 @@
               <rect x="20" y="34" width="14" height="5" rx="2" fill="#4a6fa5">
                 <animateTransform attributeName="transform" type="rotate" values="-15,20,36;-5,20,36;-15,20,36" dur=".8s" repeatCount="indefinite"/>
               </rect>
-              <text x="50" y="67" text-anchor="middle" font-size="7" fill="#408060" font-family="sans-serif">🍜 fed her in hospital</text>
             </svg>
             <h3>Feeding You in Hospital</h3>
             <p>You were unwell and I sat right there, feeding you with my own hands. The most satisfying thing in the world.</p>
@@ -364,8 +336,6 @@
               <rect x="40" y="19" width="5" height="24" rx="3" fill="#2c1a0e"/>
               <rect x="56" y="19" width="5" height="24" rx="3" fill="#2c1a0e"/>
               <path d="M46 28 Q50 30 54 28" stroke="#c0706a" stroke-width="1.2" fill="none"/>
-              <circle cx="43" cy="31" r="4" fill="#ffb3c6" opacity=".6"/>
-              <circle cx="57" cy="31" r="4" fill="#ffb3c6" opacity=".6"/>
               <ellipse cx="42" cy="22" rx="6" ry="4" fill="#ffcc99">
                 <animateTransform attributeName="transform" type="rotate" values="0,42,22;15,42,22;0,42,22;-15,42,22;0,42,22" dur="1.2s" repeatCount="indefinite"/>
               </ellipse>
@@ -374,7 +344,6 @@
               </ellipse>
               <text x="30" y="15" font-size="8" opacity="0">✨<animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/></text>
               <text x="62" y="12" font-size="8" opacity="0">⭐<animate attributeName="opacity" values="0;1;0" dur="1.5s" begin=".75s" repeatCount="indefinite"/></text>
-              <text x="50" y="67" text-anchor="middle" font-size="7" fill="#ff6b9d" font-family="sans-serif">✨ head massage</text>
             </svg>
             <h3>Head Massage</h3>
             <p>You'd close your eyes and trust me completely. Those quiet moments where the whole world just paused.</p>
@@ -406,9 +375,6 @@
               <!-- eyebrows -->
               <path d="M41.5 21 Q44.5 19.5 47.5 21" stroke="#2c1a0e" stroke-width="1.1" fill="none" stroke-linecap="round"/>
               <path d="M52.5 21 Q55.5 19.5 58.5 21" stroke="#2c1a0e" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-              <!-- blush -->
-              <circle cx="41" cy="30" r="3.5" fill="#ffb3c6" opacity=".55"/>
-              <circle cx="59" cy="30" r="3.5" fill="#ffb3c6" opacity=".55"/>
               <!-- smile -->
               <path d="M45 33 Q50 38 55 33" stroke="#c0706a" stroke-width="1.3" fill="none" stroke-linecap="round"/>
               <!-- LEFT earring already placed (stud + dangle) -->
@@ -434,7 +400,6 @@
               <text x="60" y="21" font-size="7" fill="#f0c060" opacity="0">✨<animate attributeName="opacity" values="0;0;1;1;0" dur="1.6s" repeatCount="indefinite"/></text>
               <!-- shoulder hint -->
               <rect x="28" y="42" width="44" height="14" rx="8" fill="#ff6b9d" opacity=".45"/>
-              <text x="50" y="67" text-anchor="middle" font-size="7" fill="#9b59b6" font-family="sans-serif">💎 putting earrings on her</text>
             </svg>
             <h3>Putting Earrings On You</h3>
             <p>My clumsy hands, your trust. You looked absolutely beautiful. You always do.</p>
@@ -459,7 +424,6 @@
               <rect x="12" y="5" width="30" height="14" rx="5" fill="#2d1050"/>
               <polygon points="22,19 18,24 28,19" fill="#2d1050"/>
               <text x="27" y="15" text-anchor="middle" font-size="5.5" fill="#ff6b9d">lol 😂</text>
-              <text x="50" y="67" text-anchor="middle" font-size="7" fill="#9b59b6" font-family="sans-serif">👫 chaddi gang talks</text>
             </svg>
             <h3>Chaddi Gang Talks</h3>
             <p>Those conversations only we could have — everything and nothing, our own little world. Pure gold.</p>
@@ -488,7 +452,6 @@
               <circle cx="78" cy="30" r="4" fill="#ffb3c6" opacity=".5"/>
               <path d="M67 30 Q72 37 77 30" stroke="#c0706a" stroke-width="1.5" fill="none"/>
               <rect x="56" y="40" width="8" height="10" rx="2" fill="#88ccff" opacity=".7"/>
-              <text x="50" y="67" text-anchor="middle" font-size="7" fill="#88ccff" font-family="sans-serif">💦 water splash!</text>
             </svg>
             <h3>You Splashed Water on Me</h3>
             <p>Out of nowhere — splash. That shriek of laughter from you while I stood there dripping. I was annoyed for exactly 2 seconds.</p>
@@ -536,7 +499,6 @@
                 <animate attributeName="rx" values="2;1.2;2.5;2" dur=".4s" repeatCount="indefinite"/>
                 <animate attributeName="ry" values="3;4;2;3" dur=".4s" repeatCount="indefinite"/>
               </ellipse>
-              <text x="50" y="67" text-anchor="middle" font-size="7" fill="#8070b0" font-family="sans-serif">👻 horror stories</text>
             </svg>
             <h3>Your Horror Talks 👻</h3>
             <p>You'd lean in, drop your voice, and start one of those stories. I acted unbothered. I was absolutely not unbothered.</p>
@@ -749,7 +711,7 @@
 
       <div class="pinocchio-text" id="pinocchio-text">
         <p class="pinocchio-para">Yes yes — Pinocchio. That&rsquo;s you, and it suits you perfectly. 🎭</p>
-        <p class="pinocchio-para">Expressive, dramatic, and somehow always the most entertaining person in every room.</p>
+        <p class="pinocchio-para">Kiddo, dramatic, and somehow always the most entertaining person in every room.</p>
         <p class="pinocchio-para">Never change, my Pinocchio. The world needs exactly your kind of magic. 🌟</p>
       </div>
 

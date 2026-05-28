@@ -45,7 +45,7 @@ const POEM = [
   { text: "I made all this...",                       delay: 1000 },
   { text: "as a birthday present to you",             delay: 1200 },
   { text: "",                                         delay: 600,   spacer: true },
-  { text: "I'm glad we met on zzz",                   delay: 1400 },  /* ← change zzz */
+  { text: "I'm glad we met on August, 2025",                   delay: 1400 },  
   { text: "thanks for the friendship we made",        delay: 1000 },
   { text: "thanks for everything",                    delay: 1400 },
   { text: "",                                         delay: 600,   spacer: true },
@@ -123,7 +123,7 @@ let sparkleTimer   = 0;
 /* Dark overlay cursor tracking */
 let lastCursorX        = window.innerWidth  / 2;
 let lastCursorY        = window.innerHeight / 2;
-let darkActive         = true;  /* true while dark layers are in the DOM */
+let darkActive         = false;
 let moveButtonInterval = null;
 let prevBtnLeft        = -999;
 let prevBtnTop         = -999;
@@ -902,10 +902,6 @@ function initPoemScreen() {
    MUSIC TOGGLE
    ══════════════════════════════════════════════════════ */
 function toggleMusic() {
-  const noSrc = bgMusic.networkState === HTMLMediaElement.NETWORK_NO_SOURCE
-             || bgMusic.readyState   === HTMLMediaElement.HAVE_NOTHING;
-  if (noSrc) { musicToggle.title = 'Add music.mp3 next to index.html'; return; }
-
   if (musicPlaying) {
     bgMusic.pause();
     musicPlaying = false;
@@ -933,15 +929,6 @@ function toggleMusic() {
    INIT
    ══════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* Dark intro layers */
-  initDarkScreen();
-  document.addEventListener('mousemove', onDarkMouseMove);
-  document.addEventListener('touchmove',  onDarkTouch,  { passive: true });
-  if (lightupBtn) {
-    lightupBtn.addEventListener('click', lightUp);
-    lightupBtn.addEventListener('touchstart', e => { e.preventDefault(); lightUp(); }, { passive: false });
-  }
 
   /* Background */
   createOrbs();
